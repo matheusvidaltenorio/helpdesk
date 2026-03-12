@@ -2,9 +2,25 @@
 
 Sistema de Chamados desenvolvido com foco em aprendizado de engenharia de software e arquitetura profissional.
 
+## Acesso online (Render)
+
+| Serviço | URL |
+|---------|-----|
+| **Frontend** | [https://helpdesk-web-lxze.onrender.com](https://helpdesk-web-lxze.onrender.com) |
+| **Backend API** | https://helpdesk-api-ldxn.onrender.com |
+
 ## Sobre o projeto
 
 Projeto educacional construído etapa por etapa, explicando cada decisão técnica, alternativas e boas práticas usadas em empresas.
+
+### Funcionalidades
+
+- Cadastro e login de usuários
+- Criação e listagem de chamados
+- Filtros por status e prioridade
+- Comentários nos chamados
+- Alteração de status (atendentes e admins)
+- **Painel administrativo** — gerenciar perfis (usuário, atendente, admin) sem acessar o banco
 
 ## Stack
 
@@ -13,6 +29,7 @@ Projeto educacional construído etapa por etapa, explicando cada decisão técni
 | Frontend | React + Vite |
 | Backend | Node.js + Express |
 | Banco de dados | PostgreSQL |
+| Deploy | Render |
 | Ferramentas | Docker, Git, Postman |
 
 ## Estrutura de pastas
@@ -22,7 +39,12 @@ HelpDesk/
 ├── docs/                  # Documentação de cada etapa
 │   ├── ETAPA-1-PLANEJAMENTO.md
 │   ├── ETAPA-2-MODELAGEM-BANCO.md
-│   └── ETAPA-3-ESTRUTURA-BACKEND.md
+│   ├── ETAPA-3-ESTRUTURA-BACKEND.md
+│   ├── ETAPA-4-API-REST.md
+│   ├── ETAPA-5-AUTENTICACAO.md
+│   ├── ETAPA-6-FRONTEND.md
+│   ├── ETAPA-7-INTEGRACAO.md
+│   └── ETAPA-8-DEPLOY.md
 ├── database/
 │   └── schema.sql         # Script SQL do banco
 ├── backend/               # API Node.js + Express
@@ -31,10 +53,19 @@ HelpDesk/
 │   │   ├── controllers/
 │   │   ├── services/
 │   │   ├── repositories/
-│   │   └── app.js
+│   │   ├── middlewares/
+│   │   └── routes/
 │   ├── server.js
 │   └── package.json
+├── frontend/              # React + Vite
+│   ├── src/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   ├── pages/
+│   │   └── services/
+│   └── package.json
 ├── docker-compose.yml     # PostgreSQL para desenvolvimento
+├── docker-compose.prod.yml
 └── README.md
 ```
 
