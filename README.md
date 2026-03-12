@@ -44,7 +44,8 @@ HelpDesk/
 │   ├── ETAPA-5-AUTENTICACAO.md
 │   ├── ETAPA-6-FRONTEND.md
 │   ├── ETAPA-7-INTEGRACAO.md
-│   └── ETAPA-8-DEPLOY.md
+│   ├── ETAPA-8-DEPLOY.md
+│   └── ETAPA-9-BOAS-PRATICAS.md
 ├── database/
 │   └── schema.sql         # Script SQL do banco
 ├── backend/               # API Node.js + Express
@@ -113,7 +114,7 @@ Acesse `http://localhost:5173`
 - [x] **Etapa 6** — Frontend React
 - [x] **Etapa 7** — Integração completa
 - [x] **Etapa 8** — Deploy
-- [ ] Etapa 9 — Boas práticas
+- [x] **Etapa 9** — Boas práticas (segurança, logs, tratamento de erros)
 
 ## Como começar
 
