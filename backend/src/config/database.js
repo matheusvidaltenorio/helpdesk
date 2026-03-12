@@ -1,20 +1,33 @@
 /**
  * Configuração da conexão com PostgreSQL
- * 
+ *
  * Usa a lib 'pg' (node-postgres).
  * Pool = conjunto de conexões reutilizáveis (melhor performance que criar uma por requisição).
+ *
+ * Suporta:
+ * - DATABASE_URL: URL completa (usado no Render, Railway, etc.)
+ * - Variáveis separadas (DB_HOST, DB_USER, etc.) para desenvolvimento local
  */
 
 import pg from 'pg';
 
 const { Pool } = pg;
 
+const config = process.env.DATABASE_URL
+  ? {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    }
+  : {
+      host: process.env.DB_HOST || 'localhost',
+      port: process.env.DB_PORT || 5432,
+      database: process.env.DB_NAME || 'helpdesk',
+      user: process.env.DB_USER || 'postgres',
+      password: process.env.DB_PASSWORD || 'postgres',
+    };
+
 const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT || 5432,
-  database: process.env.DB_NAME || 'helpdesk',
-  user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
+  ...config,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
