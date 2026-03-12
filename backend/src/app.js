@@ -19,6 +19,9 @@ const corsOptions = isProd && process.env.CORS_ORIGIN
   : {};
 app.use(cors(corsOptions));
 
+// Parse do corpo JSON (obrigatório para POST/PUT/PATCH)
+app.use(express.json());
+
 // Rotas
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Help Desk API está funcionando' });
