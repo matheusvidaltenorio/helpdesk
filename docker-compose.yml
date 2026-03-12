@@ -1,0 +1,23 @@
+# Docker Compose - PostgreSQL para desenvolvimento
+#
+# Uso: docker-compose up -d
+# Cria o banco 'helpdesk' e usuário postgres.
+# Depois execute database/schema.sql para criar as tabelas.
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: helpdesk-db
+    environment:
+      POSTGRES_DB: helpdesk
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
