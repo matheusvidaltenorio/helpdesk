@@ -10,7 +10,14 @@ export async function listar(req, res, next) {
     const filtros = {};
     if (status) filtros.status = status;
     if (prioridade) filtros.prioridade = prioridade;
-    if (usuario_id) filtros.usuario_id = parseInt(usuario_id, 10);
+
+    // Usuário comum só vê seus próprios chamados. Atendente e admin veem todos.
+    if (req.user.role === 'usuario') {
+      filtros.usuario_id = req.user.id;
+    } else if (usuario_id) {
+      // Atendente/admin podem filtrar por usuario_id se quiserem
+      filtros.usuario_id = parseInt(usuario_id, 10);
+    }
 
     const chamados = await chamadoService.listar(filtros);
     res.json(chamados);
