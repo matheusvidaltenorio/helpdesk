@@ -114,9 +114,3 @@ Acesse `http://localhost:5173`
 - [x] **Etapa 7** — Integração completa
 - [x] **Etapa 8** — Deploy
 - [ ] Etapa 9 — Boas práticas
-
-## Como começar
-
-1. Leia o documento `docs/ETAPA-1-PLANEJAMENTO.md`
-2. Complete os exercícios da Etapa 1
-3. Avance para a Etapa 2 quando estiver pronto
