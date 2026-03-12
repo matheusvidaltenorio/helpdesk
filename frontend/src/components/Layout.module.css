@@ -22,6 +22,48 @@
   color: #0ea5e9;
 }
 
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.navLink:hover {
+  color: #0ea5e9;
+  background: #1e293b;
+}
+
+.nav button {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.nav button:hover {
+  color: #0ea5e9;
+  background: #1e293b;
+}
+
+.adminLink {
+  color: #fbbf24;
+}
+
+.adminLink:hover {
+  color: #fcd34d;
+}
+
 .logo:hover {
   color: #38bdf8;
 }

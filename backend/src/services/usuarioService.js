@@ -92,6 +92,32 @@ export async function atualizar(id, dados) {
   return usuarioRepo.update(id, { nome, email });
 }
 
+export async function alterarRole(adminUserId, adminRole, targetUserId, novaRole) {
+  if (adminRole !== 'admin') {
+    const erro = new Error('Apenas administradores podem alterar funções');
+    erro.statusCode = 403;
+    throw erro;
+  }
+  const ROLES_VALIDOS = ['usuario', 'atendente', 'admin'];
+  if (!ROLES_VALIDOS.includes(novaRole)) {
+    const erro = new Error('Função inválida');
+    erro.statusCode = 400;
+    throw erro;
+  }
+  const usuario = await usuarioRepo.findById(targetUserId);
+  if (!usuario) {
+    const erro = new Error('Usuário não encontrado');
+    erro.statusCode = 404;
+    throw erro;
+  }
+  if (targetUserId === adminUserId) {
+    const erro = new Error('Você não pode alterar sua própria função');
+    erro.statusCode = 400;
+    throw erro;
+  }
+  return usuarioRepo.updateRole(targetUserId, novaRole);
+}
+
 export async function deletar(id) {
   const existe = await usuarioRepo.findById(id);
   if (!existe) {

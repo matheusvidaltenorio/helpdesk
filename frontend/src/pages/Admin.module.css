@@ -1,0 +1,91 @@
+.container {
+  padding: 1.5rem;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  color: #f8fafc;
+}
+
+.erro {
+  color: #fca5a5;
+  padding: 1rem;
+  background: #7f1d1d;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+.table th {
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.table td {
+  color: #e2e8f0;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.selectRole {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.selectRole:focus {
+  outline: none;
+  border-color: #0ea5e9;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge_usuario {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+.badge_atendente {
+  background: #14532d;
+  color: #86efac;
+}
+
+.badge_admin {
+  background: #7f1d1d;
+  color: #fca5a5;
+}
+
+.loading {
+  color: #94a3b8;
+  padding: 2rem;
+}

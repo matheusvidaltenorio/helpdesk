@@ -59,6 +59,16 @@ export async function updateWithPassword(id, dados) {
   return rows[0] || null;
 }
 
+export async function updateRole(id, role) {
+  const { rows } = await pool.query(
+    `UPDATE usuarios SET role = $1, updated_at = NOW()
+     WHERE id = $2
+     RETURNING id, nome, email, role, created_at, updated_at`,
+    [role, id]
+  );
+  return rows[0] || null;
+}
+
 export async function remove(id) {
   const { rowCount } = await pool.query('DELETE FROM usuarios WHERE id = $1', [id]);
   return rowCount > 0;

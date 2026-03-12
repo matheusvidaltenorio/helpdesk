@@ -90,3 +90,21 @@ export async function adicionarComentario(chamadoId, texto) {
   if (!res.ok) throw new Error(data.error || 'Erro ao adicionar comentário');
   return data;
 }
+
+export async function getUsuarios() {
+  const res = await fetch(`${API_URL}/usuarios`, { headers: getHeaders() });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Erro ao listar usuários');
+  return data;
+}
+
+export async function alterarRoleUsuario(id, role) {
+  const res = await fetch(`${API_URL}/usuarios/${id}/role`, {
+    method: 'PATCH',
+    headers: getHeaders(),
+    body: JSON.stringify({ role }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Erro ao alterar role');
+  return data;
+}

@@ -7,6 +7,7 @@ import { useAuth } from './contexts/AuthContext';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import Chamados from './pages/Chamados';
+import Admin from './pages/Admin';
 import NovoChamado from './pages/NovoChamado';
 import ChamadoDetalhe from './pages/ChamadoDetalhe';
 
@@ -52,6 +53,14 @@ export default function App() {
           element={
             <RotaProtegida>
               <ChamadoDetalhe />
+            </RotaProtegida>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <RotaProtegida>
+              <Admin />
             </RotaProtegida>
           }
         />

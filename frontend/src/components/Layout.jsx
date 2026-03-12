@@ -19,6 +19,15 @@ export default function Layout({ children }) {
     <div className={styles.layout}>
       <header className={styles.header}>
         <h1 className={styles.logo} onClick={() => navigate('/')}>Help Desk</h1>
+        <nav className={styles.nav}>
+          <button type="button" onClick={() => navigate('/')}>Chamados</button>
+          <button type="button" onClick={() => navigate('/chamados/novo')}>Novo chamado</button>
+          {user?.role === 'admin' && (
+            <button type="button" onClick={() => navigate('/admin')} className={styles.adminLink}>
+              Admin
+            </button>
+          )}
+        </nav>
         <div className={styles.userArea}>
           <span className={styles.userName}>{user?.nome}</span>
           <button type="button" onClick={handleLogout} className={styles.btnLogout}>

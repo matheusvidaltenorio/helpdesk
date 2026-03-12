@@ -53,6 +53,25 @@ export async function atualizar(req, res, next) {
   }
 }
 
+export async function alterarRole(req, res, next) {
+  try {
+    const id = parseInt(req.params.id, 10);
+    if (isNaN(id)) {
+      return res.status(400).json({ error: 'ID inválido' });
+    }
+    const { role } = req.body;
+    const usuario = await usuarioService.alterarRole(
+      req.user.id,
+      req.user.role,
+      id,
+      role
+    );
+    res.json(usuario);
+  } catch (err) {
+    next(err);
+  }
+}
+
 export async function deletar(req, res, next) {
   try {
     const id = parseInt(req.params.id, 10);
