@@ -7,6 +7,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { getChamado, adicionarComentario, atualizarChamado } from '../services/api';
 import { useAuth } from '../contexts/AuthContext';
+import { useToast } from '../contexts/ToastContext';
 import styles from './ChamadoDetalhe.module.css';
 
 export default function ChamadoDetalhe() {
@@ -19,6 +20,7 @@ export default function ChamadoDetalhe() {
   const [enviando, setEnviando] = useState(false);
 
   const { user } = useAuth();
+  const toast = useToast();
   const podeAlterarStatus = user?.role === 'atendente' || user?.role === 'admin';
 
   async function carregar() {
@@ -39,8 +41,9 @@ export default function ChamadoDetalhe() {
     try {
       await atualizarChamado(id, { status: novoStatus });
       setChamado((prev) => ({ ...prev, status: novoStatus }));
+      toast.success('Status atualizado');
     } catch (err) {
-      setErro(err.message);
+      toast.error(err.message);
     }
   }
 
@@ -56,8 +59,9 @@ export default function ChamadoDetalhe() {
       await adicionarComentario(id, textoComentario);
       setTextoComentario('');
       await carregar();
+      toast.success('Comentário enviado');
     } catch (err) {
-      setErro(err.message);
+      toast.error(err.message);
     } finally {
       setEnviando(false);
     }

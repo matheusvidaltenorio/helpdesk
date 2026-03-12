@@ -8,10 +8,12 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import Layout from '../components/Layout';
 import { getUsuarios, alterarRoleUsuario } from '../services/api';
+import { useToast } from '../contexts/ToastContext';
 import styles from './Admin.module.css';
 
 export default function Admin() {
   const { user, loading: authLoading } = useAuth();
+  const toast = useToast();
   const [usuarios, setUsuarios] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState('');
@@ -45,8 +47,9 @@ export default function Admin() {
       setUsuarios((prev) =>
         prev.map((u) => (u.id === usuarioId ? { ...u, role: novaRole } : u))
       );
+      toast.success('Perfil atualizado');
     } catch (err) {
-      setErro(err.message);
+      toast.error(err.message);
     }
   }
 
