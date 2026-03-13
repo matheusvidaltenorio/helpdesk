@@ -3,27 +3,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: var(--bg-main);
+  padding: 1rem;
 }
 
 .card {
-  background: #1e293b;
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
 }
 
 .card h1 {
   margin: 0 0 0.5rem;
   font-size: 1.75rem;
-  color: #f8fafc;
+  color: var(--text-primary);
 }
 
 .subtitle {
   margin: 0 0 1.5rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -42,35 +44,36 @@
 .field label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #e2e8f0;
+  color: var(--text-primary);
 }
 
 .field input {
   padding: 0.75rem 1rem;
-  border: 1px solid #475569;
+  border: 1px solid var(--border-light);
   border-radius: 8px;
-  background: #0f172a;
-  color: #f8fafc;
+  background: #fff;
+  color: var(--text-primary);
   font-size: 1rem;
 }
 
 .field input:focus {
   outline: none;
-  border-color: #0ea5e9;
+  border-color: var(--accent);
 }
 
 .erro {
   margin: 0;
   padding: 0.75rem;
-  background: #7f1d1d;
-  color: #fca5a5;
-  border-radius: 6px;
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
   font-size: 0.9rem;
+  border: 1px solid #fecaca;
 }
 
 .btnSubmit {
   padding: 0.875rem 1.5rem;
-  background: #0ea5e9;
+  background: var(--accent);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -81,7 +84,7 @@
 }
 
 .btnSubmit:hover:not(:disabled) {
-  background: #0284c7;
+  background: var(--accent-hover);
 }
 
 .btnSubmit:disabled {
@@ -93,11 +96,11 @@
   margin-top: 1.25rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .link a {
-  color: #0ea5e9;
+  color: var(--accent);
   text-decoration: none;
 }
 

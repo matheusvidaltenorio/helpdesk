@@ -5,7 +5,7 @@
 .btnVoltar {
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--text-secondary);
   cursor: pointer;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
@@ -13,20 +13,21 @@
 }
 
 .btnVoltar:hover {
-  color: #0ea5e9;
+  color: var(--accent);
 }
 
 .header h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #f8fafc;
+  color: var(--text-primary);
 }
 
 .form {
-  background: #1e293b;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #334155;
+  background: var(--card-bg);
+  padding: 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
   max-width: 600px;
 }
 
@@ -38,7 +39,7 @@
   display: block;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -47,10 +48,10 @@
 .field select {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #475569;
-  border-radius: 6px;
-  background: #0f172a;
-  color: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-primary);
   font-size: 1rem;
 }
 
@@ -58,7 +59,7 @@
 .field textarea:focus,
 .field select:focus {
   outline: none;
-  border-color: #0ea5e9;
+  border-color: var(--accent);
 }
 
 .field textarea {
@@ -83,29 +84,29 @@
 .btnCancelar {
   padding: 0.6rem 1.25rem;
   background: transparent;
-  border: 1px solid #475569;
-  color: #94a3b8;
-  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .btnCancelar:hover {
-  background: #334155;
-  color: #e2e8f0;
+  background: var(--bg-main);
+  color: var(--text-primary);
 }
 
 .btnSalvar {
   padding: 0.6rem 1.5rem;
-  background: #0ea5e9;
+  background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .btnSalvar:hover:not(:disabled) {
-  background: #0284c7;
+  background: var(--accent-hover);
 }
 
 .btnSalvar:disabled {

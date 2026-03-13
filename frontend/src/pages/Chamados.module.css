@@ -10,7 +10,7 @@
 .toolbar h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #f8fafc;
+  color: var(--text-primary);
 }
 
 .actions {
@@ -21,40 +21,44 @@
 
 .select {
   padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid #475569;
-  background: #1e293b;
-  color: #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: var(--card-bg);
+  color: var(--text-primary);
   font-size: 0.9rem;
+  box-shadow: var(--shadow);
 }
 
 .btnNovo {
-  padding: 0.5rem 1.25rem;
-  background: #0ea5e9;
+  padding: 0.6rem 1.25rem;
+  background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 .btnNovo:hover {
-  background: #0284c7;
+  background: var(--accent-hover);
 }
 
 .erro {
   padding: 1rem;
-  background: #7f1d1d;
-  color: #fca5a5;
+  background: #fef2f2;
+  color: #b91c1c;
   border-radius: 8px;
   margin-bottom: 1rem;
+  border: 1px solid #fecaca;
 }
 
 .loading,
 .vazio {
-  color: #94a3b8;
+  color: var(--text-secondary);
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
+  font-size: 0.95rem;
 }
 
 .lista {
@@ -63,20 +67,22 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .item {
-  background: #1e293b;
-  border-radius: 8px;
-  padding: 1.25rem;
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
   cursor: pointer;
-  border: 1px solid #334155;
-  transition: border-color 0.2s;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .item:hover {
-  border-color: #0ea5e9;
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
 }
 
 .itemHeader {
@@ -88,58 +94,64 @@
 
 .itemId {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-secondary);
 }
 
 .badgeBaixa {
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
   font-size: 0.75rem;
-  background: #14532d;
-  color: #86efac;
+  font-weight: 500;
+  background: #dcfce7;
+  color: #166534;
 }
 
 .badgeMedia {
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
   font-size: 0.75rem;
-  background: #1e3a8a;
-  color: #93c5fd;
+  font-weight: 500;
+  background: #dbeafe;
+  color: #1e40af;
 }
 
 .badgeAlta {
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
   font-size: 0.75rem;
-  background: #7f1d1d;
-  color: #fca5a5;
+  font-weight: 500;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .status {
   margin-left: auto;
-  font-size: 0.85rem;
-  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .itemTitulo {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: #f8fafc;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .itemDescricao {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  line-height: 1.5;
 }
 
 .itemMeta {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-secondary);
   display: flex;
   justify-content: space-between;
 }
