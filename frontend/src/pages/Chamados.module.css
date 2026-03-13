@@ -10,7 +10,7 @@
 .toolbar h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: #1e293b;
 }
 
 .actions {
@@ -22,11 +22,11 @@
 .select {
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  border: 1px solid var(--border-light);
-  background: var(--card-bg);
-  color: var(--text-primary);
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #1e293b;
   font-size: 0.9rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .btnNovo {
@@ -55,7 +55,7 @@
 
 .loading,
 .vazio {
-  color: var(--text-secondary);
+  color: #64748b;
   text-align: center;
   padding: 3rem;
   font-size: 0.95rem;
@@ -71,18 +71,18 @@
 }
 
 .item {
-  background: var(--card-bg);
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 12px;
   padding: 1.25rem 1.5rem;
   cursor: pointer;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .item:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  border-color: #2563eb;
 }
 
 .itemHeader {
@@ -94,7 +94,7 @@
 
 .itemId {
   font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: #64748b;
 }
 
 .badgeBaixa {
@@ -128,20 +128,20 @@
   margin-left: auto;
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #64748b;
 }
 
 .itemTitulo {
   margin: 0 0 0.5rem;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1e293b;
 }
 
 .itemDescricao {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: #64748b;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -151,7 +151,7 @@
 
 .itemMeta {
   font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: #64748b;
   display: flex;
   justify-content: space-between;
 }

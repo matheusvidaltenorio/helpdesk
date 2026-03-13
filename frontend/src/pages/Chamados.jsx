@@ -86,7 +86,7 @@ export default function Chamados() {
               <div className={styles.itemHeader}>
                 <span className={styles.itemId}>#{c.id}</span>
                 <span className={styles[badgePrioridade(c.prioridade)]}>
-                  {c.prioridade}
+                  {(c.prioridade || '').toUpperCase()}
                 </span>
                 <span className={styles.status}>{formatarStatus(c.status)}</span>
               </div>
